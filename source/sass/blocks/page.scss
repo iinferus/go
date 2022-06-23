@@ -1,0 +1,46 @@
+.page {
+  font-size: 10vw * $pxm;
+  line-height: 10vw * $pxm;
+  overflow-x: hidden;
+
+  @media (min-width: $mobile-width) {
+    font-size: 10vw * $px;
+    line-height: 10vw * $px;
+  }
+}
+
+.page__body {
+  margin: 0;
+  background-color: $white;
+  font-family: $font-family-text;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+input {
+  padding: 0;
+  border: none;
+  font: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1vw * $px;
+  height: 1vw * $px;
+  margin: -1vw * $px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  visibility: hidden;
+}

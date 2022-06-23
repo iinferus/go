@@ -1,0 +1,64 @@
+{
+  "name": "columb",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Herman Krasnopolskyi",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^10.2.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.4",
+    "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-terser": "^2.0.1",
+    "gulp-webp": "^4.0.1",
+    "postcss": "^8.2.10",
+    "postcss-csso": "^5.0.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-htmlacademy": "^0.1.4",
+    "webpack-stream": "^7.0.0"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/**/*.sass\" --syntax sass",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.sass"
+  ],
+  "engines": {
+    "node": "14.15.0"
+  },
+  "dependencies": {
+    "browser": "^0.2.6",
+    "gulp-file-include": "^2.3.0",
+    "no-ui-slider": "^1.2.0",
+    "sass": "^1.50.0",
+    "swiper": "^8.1.0",
+    "webpack": "^5.72.0"
+  }
+}
