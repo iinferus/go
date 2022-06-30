@@ -22,7 +22,7 @@ const webpackConfig = require('./webpack.config.js');
 const paths = {
   scripts: {
     src: "./source",
-    dest: "./docs/",
+    dest: "./build/",
   },
 };
 
@@ -38,7 +38,7 @@ const styles = () => {
     .pipe(postcss([autoprefixer(), csso()]))
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("docs/css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
 };
 
@@ -60,7 +60,7 @@ async function html () {
       })
     )
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("docs"));
+    .pipe(gulp.dest("build"));
 };
 
 // Scripts
@@ -69,7 +69,7 @@ const scripts = () => {
   return gulp
     .src("source/js/script.js")
     .pipe(webpackStream(webpackConfig), webpack)
-    .pipe(gulp.dest("docs"))
+    .pipe(gulp.dest("build"))
     .pipe(sync.stream());
 };
 
@@ -87,13 +87,13 @@ const optimizeImages = () => {
         imagemin.svgo(),
       ])
     )
-    .pipe(gulp.dest("docs/img"));
+    .pipe(gulp.dest("build/img"));
 };
 
 exports.images = optimizeImages;
 
 const copyImages = () => {
-  return gulp.src("source/img/**/*.{png,jpg,svg}").pipe(gulp.dest("docs/img"));
+  return gulp.src("source/img/**/*.{png,jpg,svg}").pipe(gulp.dest("build/img"));
 };
 
 exports.images = copyImages;
@@ -104,7 +104,7 @@ const createWebp = () => {
   return gulp
     .src("source/img/**/*.{jpg,png}")
     .pipe(webp({ quality: 90 }))
-    .pipe(gulp.dest("docs/img"));
+    .pipe(gulp.dest("build/img"));
 };
 
 exports.createWebp = createWebp;
@@ -120,7 +120,7 @@ const sprite = () => {
       })
     )
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("docs/img"));
+    .pipe(gulp.dest("build/img"));
 };
 
 exports.sprite = sprite;
@@ -140,7 +140,7 @@ const copy = (done) => {
         base: "source",
       }
     )
-    .pipe(gulp.dest("docs"));
+    .pipe(gulp.dest("build"));
   done();
 };
 
@@ -149,7 +149,7 @@ exports.copy = copy;
 // Clean
 
 const clean = () => {
-  return del("docs");
+  return del("build");
 };
 
 // Server
@@ -157,7 +157,7 @@ const clean = () => {
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: "docs",
+      baseDir: "build",
     },
     cors: true,
     notify: false,
