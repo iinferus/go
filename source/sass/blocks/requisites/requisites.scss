@@ -1,0 +1,30 @@
+.requisites {
+  padding: 0;
+  background-color: transparent;
+  color: $blue;
+  position: relative;
+  width: max-content;
+}
+
+.requisites__title {
+  width: max-content;
+  margin: 0 0 2rem;
+  line-height: 2.4rem;
+}
+
+.requisites__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.requisites__check {
+  display: flex;
+  cursor: pointer;
+  column-gap: 1rem;
+  align-items: center;
+  transition: 0.35s ease-in-out;
+
+  &:hover {
+    color: $blue;
+  }
+}

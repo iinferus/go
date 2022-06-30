@@ -1,0 +1,15 @@
+.tooltip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(100%, -30%);
+  font-size: 1.5rem;
+  font-weight: 200;
+  opacity: 0;
+  user-select: none;
+  transition: 0.3s ease-in-out;
+
+  &--visible {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,139 @@
+.block {
+  margin: 5rem 2rem;
+  @media screen and (min-width: $mobile-width) {
+    &--documents {
+      background-color: lighten($blue, 15%);
+      border-radius: 4rem;
+      color: $white;
+
+      .block__item {
+        @media screen and (min-width: $mobile-width) {
+          background-color: $white;
+          color: $blue;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: $blue;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &--projects {
+      .block__wrapper {
+        gap: 4rem 2rem;
+      }
+    }
+
+    &--donate {
+      .block__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: ($mobile-width + 1)) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.block__title {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 2rem auto 3rem;
+  padding: 1.3rem 1.5rem;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  text-transform: uppercase;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 0.1rem;
+    background-color: $blue;
+  }
+}
+
+.block__button {
+  display: block;
+  text-decoration: none;
+  width: max-content;
+  height: min-content;
+  padding: 2.2rem 2.5rem;
+  border: 0.1rem solid $blue;
+  color: $blue;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: $font-family-title;
+  border-radius: 3rem;
+  margin: 0 auto;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.block__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  @media screen and (min-width: $mobile-width) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 4rem 15rem;
+  }
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.block__text {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+
+  @media screen and (min-width: ($mobile-width + 1)) {
+    width: 52%;
+  }
+}
+
+.block__photo {
+  display: block;
+  border-radius: 5rem;
+  overflow: hidden;
+  margin-left: auto;
+
+  @media screen and (min-width: $mobile-width) {
+    width: 45%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.block__item {
+  display: block;
+  padding: 4rem 2rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  background-color: $blue;
+  color: $white;
+  border-radius: 3rem;
+}
